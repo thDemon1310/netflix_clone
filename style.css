@@ -446,13 +446,14 @@ select option {
   width: 100%;
   min-height: 500px;
   display: grid;
-  grid-template-rows: repeat(1fr, 5);
-  grid-template-columns: repeat(1fr, 1);
+  grid-template-rows: repeat(6, auto);
+  grid-template-columns: 1fr;
   margin-top: 20px;
-  gap: 7px;
+  gap: 5px;  /* Reduced gap between elements */
 }
 
 .faq_list button {
+  height: 80px;
   background-color: rgb(53, 53, 53);
   border: none;
   color: var(--text-color);
@@ -461,13 +462,15 @@ select option {
   grid-template-rows: 1fr;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  padding: 0;  /* Removed padding */
+  margin: 0;  /* Removed margin */
 }
 
 .faq_list button:hover {
   background-color: rgb(70, 70, 70);
 }
 
-.faq_list button .question {
+.faq_list .question {
   grid-row: 1/2;
   grid-column: 1/2;
   width: 100%;
@@ -476,10 +479,11 @@ select option {
   padding: 20px;
 }
 
-.faq_list button h4 {
+.faq_list .question h4 {
   font-size: 24px;
   font-weight: 100;
   align-self: center;
+  margin: 0;
 }
 
 .faq_list button img {
@@ -491,6 +495,29 @@ select option {
   align-self: center;
   justify-self: center;
 }
+
+.answer {
+  width: 100%;
+  min-height: 100px;
+  background-color: rgb(53, 53, 53);
+  display: none;
+  padding: 20px; /* Added padding for better readability */
+  margin: 0;  /* Removed margin */
+}
+.answer p{
+  color: white;
+  font-size: 24px;
+}
+
+.faq_list button:focus + .answer,
+.faq_list button:focus-within + .answer {
+  display: block;
+}
+
+.faq_list button:focus-within img {
+  transform: rotate(45deg);
+}
+
 /* ------faq_email------ */
 .faq_email {
   width: 38vw;
@@ -501,21 +528,16 @@ select option {
   align-items: center;
   margin-bottom: 50px;
 }
-.faq_email p{
+
+.faq_email p {
   color: white;
   margin-bottom: 20px;
   font-size: 22px;
 }
+
 /* =========footer========== */
 footer {
   width: 100vw;
   height: 450px;
   background: var(--bgcolor);
-}
-
-/* Accessibility improvements */
-button:focus,
-a:focus {
-  outline: 2px dashed var(--primary-color);
-  outline-offset: 4px;
 }
