@@ -491,7 +491,21 @@ select option {
   align-self: center;
   justify-self: center;
 }
-
+/* ------faq_email------ */
+.faq_email {
+  width: 38vw;
+  height: 100px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.faq_email p{
+  color: white;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
 /* =========footer========== */
 footer {
   width: 100vw;
