@@ -509,8 +509,7 @@ select option {
   font-size: 24px;
 }
 
-.faq_list button:focus + .answer,
-.faq_list button:focus-within + .answer {
+.faq_list button:focus + .answer{
   display: block;
 }
 
